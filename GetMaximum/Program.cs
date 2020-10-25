@@ -6,8 +6,8 @@ namespace GetMaximum
         static void Main(string[] args)
         {
             MaximumNumber maximum = new MaximumNumber();
-            int output = maximum.MaximumIntegerNumber(11, 22, 33);
-            Console.WriteLine(output);
+            double output1 = maximum.MaximumFloatNumber(11.1,22.2,33.3);
+            Console.WriteLine(output1);
         }
     }
 }

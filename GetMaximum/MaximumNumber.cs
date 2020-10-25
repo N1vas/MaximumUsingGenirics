@@ -20,6 +20,11 @@ namespace GetMaximum
             var sorted_values = Sort(values);
             return sorted_values[sorted_values.Length-1];
         }
+        public T MaxMethod()
+        {
+            var max = MaxValue(this.value);
+            return max;
+        }
         public void PrintMaxValue()
         {
             var max = MaxValue(this.value);

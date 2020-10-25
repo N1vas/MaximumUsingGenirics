@@ -13,7 +13,7 @@ namespace GetMaximum
             genericDouble.PrintMaxValue();
             string[] stringArray = { "111", "222", "333", "55", "999" };
             MaximumNumber<string> genericString = new MaximumNumber<string>(stringArray);
-            genericString.PrintMaxValue();
+            genericString.MaxMethod();
         }
     }
 }

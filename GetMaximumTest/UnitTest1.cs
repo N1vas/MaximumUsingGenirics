@@ -58,5 +58,32 @@ namespace GetMaximumTest
             double actual = answer.MaximumFloatNumber(firstValue, secondValue, thirdValue);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void MaxAtPositionOneString()
+        {
+            string firstValue = "Carrot", secondValue = "Banana", thirdValue = "Apple";
+            string expected = "Carrot";
+            MaximumNumber answer = new MaximumNumber();
+            string actual = answer.MaximumStringNumber(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void MaxAtPositionTwoString()
+        {
+            string firstValue = "Banana", secondValue = "Carrot", thirdValue = "Apple";
+            string expected = "Carrot";
+            MaximumNumber answer = new MaximumNumber();
+            string actual = answer.MaximumStringNumber(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void MaxAtPositionThreeString()
+        {
+            string firstValue = "Apple", secondValue = "Banana", thirdValue = "Carrot";
+            string expected = "Carrot";
+            MaximumNumber answer = new MaximumNumber();
+            string actual = answer.MaximumStringNumber(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

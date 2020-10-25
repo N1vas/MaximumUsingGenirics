@@ -3,64 +3,27 @@ using System.Collections.Generic;
 using System.Text;
 namespace GetMaximum
 {
-    public class MaximumNumber
+    public class MaximumNumber<T> where T : IComparable
     {
-        public  int MaximumIntegerNumber(int firstValue, int secondValue, int thirdValue)
+        public T[] value;
+        public MaximumNumber(T[] value)
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-            {
-                return firstValue;
-            }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-            {
-                return secondValue;
-            }
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-            {
-                return thirdValue;
-            }
-            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
+            this.value = value;
         }
-        public double MaximumFloatNumber(double firstValue, double secondValue, double thirdValue)
+        public T[] Sort(T[] values)
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-            {
-                return firstValue;
-            }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-            {
-                return secondValue;
-            }
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-            {
-                return thirdValue;
-            }
-            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
+            Array.Sort(values);
+            return values;
         }
-        public string MaximumStringNumber(string firstString, string secondString, string thirdString)
+        public T MaxValue(params T[] values)
         {
-            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
-            {
-                return firstString;
-            }
-
-            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
-            {
-                return secondString;
-            }
-
-            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) >= 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
-            {
-                return thirdString;
-            }
-
-            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
+            var sorted_values = Sort(values);
+            return sorted_values[sorted_values.Length-1];
+        }
+        public void PrintMaxValue()
+        {
+            var max = MaxValue(this.value);
+            Console.WriteLine("Maximum value is " + max);
         }
     }
 }
